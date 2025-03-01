@@ -6,6 +6,7 @@ require_once "Controllers/WelcomeController.php";
 require_once "Controllers/DashboardController.php";
 require_once "Controllers/ComponentsController.php";
 require_once "Controllers/UtilitiesController.php";
+require_once "Controllers/PagesController.php";
 
 
 $route = new Router();
@@ -24,6 +25,15 @@ $route->get("/utilities/colors", [UtilitiesController::class, 'color']);
 $route->get("/utilities/borders", [UtilitiesController::class, 'border']);
 $route->get("/utilities/animations", [UtilitiesController::class, 'animation']);
 $route->get("/utilities/other", [UtilitiesController::class, 'other']);
+
+
+// Pages
+$route->get("/pages/login", [PagesController::class, 'login']);
+$route->get("/pages/register", [PagesController::class, 'register']);
+$route->get("/pages/forgot_password", [PagesController::class, 'forgotpsw']);
+$route->get("/pages/404page", [PagesController::class, '_404page']);
+$route->get("/pages/blankpage", [PagesController::class, 'blankpage']);
+
 
 
 
