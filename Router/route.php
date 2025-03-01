@@ -7,6 +7,7 @@ require_once "Controllers/DashboardController.php";
 require_once "Controllers/ComponentsController.php";
 require_once "Controllers/UtilitiesController.php";
 require_once "Controllers/PagesController.php";
+require_once "Controllers/ChartsController.php";
 
 
 $route = new Router();
@@ -33,6 +34,11 @@ $route->get("/pages/register", [PagesController::class, 'register']);
 $route->get("/pages/forgot_password", [PagesController::class, 'forgotpsw']);
 $route->get("/pages/404page", [PagesController::class, '_404page']);
 $route->get("/pages/blankpage", [PagesController::class, 'blankpage']);
+
+
+// Charts
+$route->get("/charts/chart", [ChartsController::class, 'chart']);
+
 
 
 
